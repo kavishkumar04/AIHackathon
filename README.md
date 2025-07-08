@@ -208,7 +208,7 @@ detect_changes_from_snowflake(yesterday, today)
 import openai
 import os
 
-# Set your API key securely
+Set your API key securely
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def explain_changes_with_gpt(added, removed):
