@@ -43,9 +43,9 @@ This whole process could take hours or even days, especially if the person who m
 5. Ensures a smooth, uninterrupted experience for users
 
 
-**Proposed Solution:**
+# Proposed Solution:
 
-**Create a Snowflake table to store daily schema snapshots.**
+# Create a Snowflake table to store daily schema snapshots.
 CREATE SCHEMA IF NOT EXISTS metadata;
 CREATE TABLE IF NOT EXISTS metadata.schema_snapshots (
     snapshot_date DATE,
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS metadata.schema_snapshots (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-**Create a snowflake table to store gpt explanations of the changes detected.**
+# Create a snowflake table to store gpt explanations of the changes detected.
 CREATE TABLE IF NOT EXISTS metadata.changes_logs (
     changes_date DATE,
     base_date DATE,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS metadata.changes_logs (
 );
 
 
-**Logic to fetch and insert the schema snapshot into that schema_snapshots table.**
+# Logic to fetch and insert the schema snapshot into that schema_snapshots table.
 import snowflake.connector
 import json
 import datetime
@@ -124,7 +124,7 @@ def fetch_and_store_schema_snapshot():
     conn.close()
 fetch_and_store_snapshot()
 
-**Logic to fetch the snapshots from the schema_snapshots table for the given date and compare them to detect the drift.**
+# Logic to fetch the snapshots from the schema_snapshots table for the given date and compare them to detect the drift.
 import snowflake.connector
 import json
 import datetime
@@ -204,7 +204,7 @@ detect_changes_from_snowflake(yesterday, today)
 
 
 
-**gpt_explainer.py: GPT based module to explain and suggest fixes for the detected changes.**
+# gpt_explainer.py: GPT based module to explain and suggest fixes for the detected changes.
 import openai
 import os
 
