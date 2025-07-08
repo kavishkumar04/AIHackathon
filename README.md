@@ -42,6 +42,10 @@ This whole process could take hours or even days, especially if the person who m
 4. Reduces delays, confusion, and loss of trust in data.
 5. Ensures a smooth, uninterrupted experience for users
 
+**AI Tools Used:** ChatGPT
+
+**Time Saved:** 4 to 6 Hours
+
 
 # Proposed Solution:
 
